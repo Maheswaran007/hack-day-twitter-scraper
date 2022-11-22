@@ -1,5 +1,2 @@
-def test():
-    print("Hello World!!!")
-
-if __name__ == "__main__":
-    test()
+def test(request):
+    return "Hello World"
