@@ -13,8 +13,8 @@ jobs:
     - id: auth
       uses: google-github-actions/auth@v0
       with:
-        workload_identity_provider: 'projects/1020302324889/locations/global/workloadIdentityPools/hack-day-github-pool/providers/github-identity-provider'
-        service_account: 'twitter-scraper@bright-calculus-267801.iam.gserviceaccount.com'
+        workload_identity_provider: 'projects/1020302324889/locations/global/workloadIdentityPools/gh-pool-hack-day/providers/gh-provider-hack-day'
+        service_account: 'github-actions-service-account@bright-calculus-267801.iam.gserviceaccount.com'
 
     - id: 'deploy'
       uses: 'google-github-actions/deploy-cloud-functions@v0'
