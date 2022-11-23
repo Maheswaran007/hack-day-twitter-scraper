@@ -3,7 +3,7 @@ from flask import escape
 import functions_framework
 # hello cruel world.
 @functions_framework.http
-def myfunction(request):
+def twitter_scrapper(request):
     """HTTP Cloud Function.
     Args:
         request (flask.Request): The request object.
