@@ -8,7 +8,8 @@ jobs:
       id-token: 'write'
 
     steps:
-    - uses: actions/checkout@v3
+    - id: checkout
+      uses: actions/checkout@v3
 
     - id: auth
       uses: google-github-actions/auth@v0
@@ -21,7 +22,10 @@ jobs:
       with:
         name: 'twitter_scrapper'
         runtime: 'python310'
+        source_dir: '.'
+        ingress_settings: ALLOW_INTERNAL_ONLY
+        service_account_email: 'hack-day-cloud-function@bright-calculus-267801.iam.gserviceaccount.com'
 
     # Example of using the output
-    - id: 'test'
+    - id: 'output'
       run: 'curl "${{ steps.deploy.outputs.url }}"'
