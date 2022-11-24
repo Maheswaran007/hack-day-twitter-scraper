@@ -20,7 +20,7 @@ bigqueryClient = bigquery.Client(credentials=credentials)
 #UPDATE TABLE
 def update_dable(df4):
     print(df4.head())
-    tableRef = bigqueryClient.dataset("Ikea_tweets").table("Ikea_hackdays_tb")
+    tableRef = bigqueryClient.dataset("Ikea_tweets").table("Tweet_hackdays_tb")
     bigqueryJob = bigqueryClient.load_table_from_dataframe(df4, tableRef)
     print('Successfully Added into Bigquery')
     bigqueryJob.result()
