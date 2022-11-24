@@ -1,5 +1,8 @@
 name: ci-cd
 on: [workflow_dispatch]
+env:
+  PROJECT_ID: 'bright-calculus-267801'
+  SECRET_NAME: 'TWITTER_API_KEYS'
 jobs:
   job_id:
     runs-on: ubuntu-latest
@@ -23,7 +26,8 @@ jobs:
         name: 'twitter_scrapper'
         runtime: 'python310'
         source_dir: '.'
-        service_account_email: 'hack-day-cloud-function@bright-calculus-267801.iam.gserviceaccount.com'
+        #service_account_email: 'hack-day-cloud-function@bright-calculus-267801.iam.gserviceaccount.com'
+        env_vars: SECRET_NAME=${{env.SECRET_NAME}},PROJECT_ID=${{env.PROJECT_ID}}
     # Example of using the output
     - id: 'output'
       run: 'curl "${{ steps.deploy.outputs.url }}"'
