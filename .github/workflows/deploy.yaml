@@ -24,7 +24,6 @@ jobs:
         runtime: 'python310'
         source_dir: '.'
         service_account_email: 'hack-day-cloud-function@bright-calculus-267801.iam.gserviceaccount.com'
-        secret_environment_variables: 'Test_API_key=projects/1020302324889/secrets/Test_API_key/versions/1'
     # Example of using the output
     - id: 'output'
       run: 'curl "${{ steps.deploy.outputs.url }}"'
