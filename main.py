@@ -12,7 +12,7 @@ load_dotenv()
 secrets = access_secret()
 
 my_api_key = secrets.get('API_KEY', '')
-my_api_secret = secrets.getenv('API_KEY_SECRET', '')
+my_api_secret = secrets.get('API_KEY_SECRET', '')
 # authenticate
 auth = tw.OAuthHandler(my_api_key, my_api_secret)
 api = tw.API(auth, wait_on_rate_limit=True)
