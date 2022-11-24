@@ -1,6 +1,7 @@
 import sys
 from flask import escape
 import functions_framework
+import os
 # hello cruel world.
 @functions_framework.http
 def twitter_scrapper(request):
@@ -17,4 +18,5 @@ def twitter_scrapper(request):
         Functions, see the `Writing HTTP functions` page.
         <https://cloud.google.com/functions/docs/writing/http#http_frameworks>
     """
-    return 'Hello World!'
+    Test_API_key = os.getenv("Test_API_key", "")
+    return f'Hello World! {Test_API_key}'
