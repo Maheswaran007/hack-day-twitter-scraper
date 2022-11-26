@@ -46,7 +46,7 @@ def twitter_scrapper(request):
                                                 'user_location': tweet.user.location,\
                                                 'user_description': tweet.user.description,
                                                 'user_verified': tweet.user.verified,
-                                                'created_ssdate': tweet.created_at,
+                                                'created_date': tweet.created_at,
                                                 'text': text, 
                                                 'hashtags': ' '.join(str(e) for e in hashtags),
                                                 'source': tweet.source,

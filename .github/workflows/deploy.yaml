@@ -30,4 +30,4 @@ jobs:
         env_vars: SECRET_NAME=${{env.SECRET_NAME}},PROJECT_ID=${{env.PROJECT_ID}}
     # Example of using the output
     - id: 'output'
-      run: 'curl "${{ steps.deploy.outputs.url }}"'
+      run: 'echo "${{ steps.deploy.outputs.url }}"'
