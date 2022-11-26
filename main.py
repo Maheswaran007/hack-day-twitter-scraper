@@ -40,13 +40,13 @@ def twitter_scrapper(request):
             for hashtag in tweet.entities["hashtags"]:
                 hashtags.append(hashtag["text"])
             text = api.get_status(id=tweet.id, tweet_mode='extended').full_text
-        except:
-            pass
+        except Exception as ex:
+            raise ex
         tweets_df = pd.concat([tweets_df,pd.DataFrame.from_records([{'user_name': tweet.user.name, 
                                                 'user_location': tweet.user.location,\
                                                 'user_description': tweet.user.description,
                                                 'user_verified': tweet.user.verified,
-                                                'date': tweet.created_at,
+                                                'created_ssdate': tweet.created_at,
                                                 'text': text, 
                                                 'hashtags': ' '.join(str(e) for e in hashtags),
                                                 'source': tweet.source,
@@ -56,4 +56,4 @@ def twitter_scrapper(request):
 
 
     update_table(tweets_df)
-    return
+    return "success"
