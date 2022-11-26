@@ -28,6 +28,7 @@ jobs:
         source_dir: '.'
         service_account_email: 'hack-day-cloud-function@bright-calculus-267801.iam.gserviceaccount.com'
         env_vars: SECRET_NAME=${{env.SECRET_NAME}},PROJECT_ID=${{env.PROJECT_ID}}
+        timeout: 300
     # Example of using the output
     - id: 'output'
       run: 'echo "${{ steps.deploy.outputs.url }}"'
