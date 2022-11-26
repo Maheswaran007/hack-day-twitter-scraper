@@ -2,6 +2,7 @@
 import tweepy as tw
 import pandas as pd
 import os
+import datetime
 from data_integration import update_table
 from dotenv import load_dotenv
 from access_secrets import access_secret
@@ -48,7 +49,8 @@ def twitter_scrapper(request):
                                                 'date': tweet.created_at,
                                                 'text': text, 
                                                 'hashtags': ' '.join(str(e) for e in hashtags),
-                                                'source': tweet.source}])])
+                                                'source': tweet.source,
+                                                'insertion_date': datetime.datetime.now()}])])
         tweets_df = tweets_df.reset_index(drop=True)
 
 
