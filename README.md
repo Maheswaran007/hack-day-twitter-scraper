@@ -1,5 +1,5 @@
 # hack-day-twitter-scraper
-Cloud Function to collect tweets related to IKAE using twitter API
+Cloud Function to collect tweets related to IKEA using twitter API
 
 # Architecture
 
