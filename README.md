@@ -3,9 +3,7 @@ Cloud Function to collect tweets related to IKEA using twitter API
 
 # Architecture
 
-
-<img width="573" alt="Twitter5" src="https://user-images.githubusercontent.com/118686610/204370498-4583a071-0b4f-49f5-903c-11ac1da46b86.PNG">
-
+<img width="573" alt="Twitter5" src="https://user-images.githubusercontent.com/118686610/204370839-f1a44597-8fd0-4336-9bb6-f999655ecfa9.PNG">
 
 Here is a cloud function that can hit twitter API and collect the tweets related to IKEA and save in a big query database. 
 To deploy just change the associated WIF and service account and run the workflow
